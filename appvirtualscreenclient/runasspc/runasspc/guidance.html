@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+  
+  
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+
+
+  
+  
+  
+  
+  <title>Guidance</title>
+  <meta content="robotronic" name="author">
+
+
+  
+  
+  <meta content="runas password description guidance" name="description">
+</head>
+
+
+<body>
+<br>
+
+
+<big><big>Guidance RunasSpc</big></big><br>
+
+
+<br>
+
+
+You can call runasSpc directly like the following command<br>
+
+
+<br>
+
+
+runasspc.exe&nbsp; /program:"C:\Program Files\Windows
+NT\Pinball\pinball.exe"
+/domain:"localhost" /user:"testadmin" /password:"password"<br>
+
+
+<img style="" src="images/screenshotsRunasSpcAdmin/Guidancescreenshot5.gif"><br>
+
+
+There is no security check and the password is in cleartext<br>
+
+
+<br>
+
+
+If you want to encrypt the logonaccount you must configure an
+encryptfile
+with runasSpc.exe (on commandline) or <br>
+
+
+runasSpcAdmin.exe (on graphical user interface). <br>
+
+
+Take a look below on
+&gt;&gt;Samples to build an encryptfile&lt;&lt;:<br>
+
+
+<br>
+
+
+After you have build a encryptfile, you can call the encryptfile with
+runasspc.exe
+like the following possibilities<br>
+
+
+A) If the name of the encryptfile is &gt;&gt;crypt.spc&lt;&lt; you can
+start it with a doubleclick on runasspc.exe.in the same directory.<br>
+
+
+B) Drag your cryptfile and drop it on runasspc<br>
+
+
+C) On commandline without a startup dialog of runasspc &gt;&gt;
+c:\path\runasspc.exe
+/cryptfile:"path\NameOfCryptfile.spc" /quiet&lt;&lt;<br>
+
+
+D) Make a shortcut like &gt;&gt; c:\path\runasspc.exe
+/cryptfile:"path\NameOfCryptfile.spc"&lt;&lt;<br>
+
+
+E)&nbsp; Link the file extension of the cryptfile to runasspc.exe (open
+with).You can also use your own file extension<br>
+
+
+<br>
+
+
+<br>
+
+
+<big>Samples to build an encryptfile:</big><br>
+
+
+<br>
+
+
+With: RunasSpc.exe<br>
+
+
+You can find samples to build an encryptfile with runasSpc.exe in the
+file sample.bat or call &gt;&gt; runasspc.exe -h &lt;&lt; to get help<br>
+
+
+<br>
+
+
+With RunasSpcAdmin.exe<br>
+
+
+To start the game pinball.exe under the local useraccount administrator<br>
+
+
+<img style="" src="images/screenshotsRunasSpcAdmin/screenshot0.gif"><br>
+
+
+<br>
+
+
+To run the Excel document molecularWheigtCalculation.xls under
+domainaccount departmentuser<br>
+
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot1.gif"> <br>
+
+
+<br>
+
+
+&nbsp;To install a msi file like acdSee 4.0.msi<br>
+
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot2.gif"> <br>
+
+
+<br>
+
+
+Call a msc file like the computerconsole<br>
+
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot3.gif"> <br>
+
+
+<br>
+
+
+To run a vbs script<br>
+
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot4.gif"> <br>
+
+
+<br>
+
+
+Insert a registry entry<br>
+
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot5.gif"> <br>
+
+
+<br>
+
+
+To start a batchfile like *.bat or *.cmd<br>
+
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot6.gif"> <br>
+
+
+<br>
+
+
+To install Java with parameters /S /V /qn<br>
+
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot7.gif"> <br>
+
+
+<br>
+
+
+To run a Batchfile with some options like optionA optionB optionC<br>
+
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot8.gif"> <br>
+
+
+<br>
+
+
+To use environment variables<br>
+
+
+<img style="" src="images/screenshotsRunasSpcAdmin/screenshot9.gif"><br>
+
+
+<br>
+
+
+<br>
+
+
+Call with rundll32 the &gt;&gt;&gt;Add / Remove programs
+applet&lt;&lt;&lt;<br>
+
+
+<img style="width: 444px; height: 544px;" alt="screenshot 10" src="images/screenshotsRunasSpcAdmin/screenshot10.gif"><a href="../../TEMP/runasspc.zip"></a>
+</body>
+</html>

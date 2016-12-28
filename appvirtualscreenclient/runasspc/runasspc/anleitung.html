@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+
+  
+  
+  <title>Anleitung</title>
+  <meta content="robotronic" name="author">
+
+  
+  <meta content="runas password beschreibung anleitung" name="description">
+</head>
+
+
+<body>
+
+<big><big><br>
+
+Anleitung RunasSpc</big></big><br>
+
+<br>
+
+RunasSpc kann wie in folgendem Aufruf gestartet werden: <br>
+
+<br>
+
+runasspc.exe&nbsp; /program:"C:\Program Files\Windows
+NT\Pinball\pinball.exe"
+/domain:"localhost" /user:"testadmin" /password:"password"<br>
+
+<img style="" alt="screenshot" src="images/screenshotsRunasSpcAdmin/Guidancescreenshot5.gif"><br>
+
+Es wird keinerlei Sicherheitspr&uuml;fung durchgef&uuml;hrt und das
+Passwort liegt im Klartext vor.<br>
+
+<br>
+
+Um die Anmeldekennung zu verschl&uuml;sseln
+m&uuml;ssen Sie eine verschl&uuml;sselte Datei generieren. <br>
+
+Das
+k&ouml;nnen Sie &uuml;ber Runasspc.exe (Kommandozeile)
+oder mit dem beigelegten Tool Runasspcadmin.(grafische Oberfl&auml;che).<br>
+
+Siehe unten&nbsp; &gt;&gt; Beispiele um Cryptfiles zu erstellen
+&lt;&lt; <br>
+
+<br>
+
+Nachdem Sie ein Cryptfile erstellt haben, k&ouml;nnen Sie das Cryptfile
+mit runasspc wie folgt aufrufen.<br>
+
+A) Wenn das Cryptfiles &gt;&gt; crypt.spc &gt;&gt; hei&szlig;t.,
+k&ouml;nnens Sie es mit einem Doppelcklick auf RunasSpc.exe im selben
+Verzeichnis starten.<br>
+
+B) Per Drag and Drop. Ziehen Sie das Cryptfile auf Runasspc.exe.<br>
+
+C) &Uuml;ber die Kommandozeile ohne einen Zwischendialog von Runasspc <br>
+
+&gt;&gt; c:\runasspcEn\runasspc.exe
+/cryptfile:"pfad\NameOfCryptfile.spc" /quiet&lt;&lt;<br>
+
+D) Erstellen Sie eine Verkn&uuml;pfung wie folgendes Beispiel <br>
+
+&gt;&gt; c:\runasspcEn\runasspc.exe
+/cryptfile:"pfad\NameOfCryptfile.spc"&lt;&lt;<br>
+
+E) Verbinden Sie die Dateiendung des Cryptfiles mit RunasSpc.exe
+(&ouml;ffnen mit). Sie k&ouml;nnen auch Ihre eigene Dateiendung
+verwenden.<br>
+
+<br>
+
+<big>Beispiele um Cryptfiles zu erstellen:</big><br>
+
+<br>
+
+Mit RunasSpc.exe (Konsole)<br>
+
+Sie finden Beispiele in der mitgelieferten Datei sample.bat oder rufen
+Sie &gt;&gt; runasspc -h &gt;&gt; auf um Hilfe zu bekommen.<br>
+
+<br>
+
+Mit RunasSpcAdmin.exe (Grafische Oberfl&auml;che)<br>
+
+Um das Spiel pinball.exe unter der lokalen Anmeldekennung administrator
+zu starten<br>
+
+<img style="" src="images/screenshotsRunasSpcAdmin/screenshot0.gif"><br>
+
+<br>
+
+Um das Exceldokument molecularWheigtCalculation.xls unter dem
+Dom&auml;nenaccount departmentuser zu starten.<br>
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot1.gif"> <br>
+
+<br>
+
+Um die MSI Datei acdSee 4.0.msi&nbsp; zu installieren<br>
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot2.gif"> <br>
+
+<br>
+
+Um eine MSC Datei zu starten wie z.B.die Computerkonsole <br>
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot3.gif"> <br>
+
+<br>
+
+Um ein VBScript zu starten.<br>
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot4.gif"> <br>
+
+<br>
+
+Einen Registrierungseintrag setzen<br>
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot5.gif"> <br>
+
+<br>
+
+Eine Batchdatei wie .cmd oder .bat zu starten<br>
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot6.gif"> <br>
+
+<br>
+
+Java installieren mit den Parametern /S /V /qn<br>
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot7.gif"> <br>
+
+<br>
+
+Eine Batchdatei mit den Parametern optionA optionB optionC starten<br>
+
+<img alt="screenshot" src="images/screenshotsRunasSpcAdmin/screenshot8.gif"> <br>
+
+<br>
+
+Umgebungsvariablen verwenden<br>
+
+<img style="" src="images/screenshotsRunasSpcAdmin/screenshot9.gif"><br>
+
+<br>
+
+&Uuml;ber rundll32 das Softwareinstallationsapplet aufrufen<br>
+
+<img style="width: 444px; height: 544px;" alt="screenshot10" src="images/screenshotsRunasSpcAdmin/screenshot10.gif"><br>
+
+</body>
+</html>

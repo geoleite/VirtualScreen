@@ -1,0 +1,83 @@
+Common11 1.5 build: 9029 released: 2007-10-02
+
+Common utility classes that work under Java 1.1+ using no Arraylists/Swing.
+
+Copyright (c) 2007 Canadian Mind Products.
+
+final class library.
+Download from http://mindprod.com/products1.html#COMMON11
+
+===> Free <===
+Full source included.
+You may even include the source code, modified or unmodified
+in commercial programs that you write and distribute.
+May be used freely for any purpose but military.
+For more details on this restriction, see
+http://mindprod.com/roedy.html#NONMILITARY
+If you include any Canadian Mind Products code in your own applications,
+your app too must be labeled non-military use only.
+All Java jars and source code are included.
+
+----
+
+Prerequisites:
+
+This program runs under any OS,
+(e.g. Win2K/XP/Vista/OSX/Linux/Solaris/Vista64/AIX...) so long as you have
+<><> Java version 1.1 <><> or later installed.
+See http://mindprod.com/jgloss/installingjava.html for details.
+
+----
+
+Installing:
+
+Download source and compiled class files to run on your own machine as a part of your own program.
+First install a recent Java JDK or JVM.
+See http://mindprod.com/jgloss/installingjava.html.
+To install, extract the zip download with Winzip
+(or similar unzip utility) into any directory you please,
+often J:\ --  ticking off the "user folder names" option.
+
+
+----
+
+Use:
+
+
+Includes:
+
+BigDate:         simplified date handling when you want dates without times.
+CMPAboutBox:     a proper about box that provides useful information.
+ImageInfo:       information about a gif, png, jpg.
+ImageViewer:     component to display an image
+Limiter:         cap, corral and hem methods to ensure a value in range.
+Misc:            loadProperties (ordered), beep, thisYear, thisMonth, thisDayOfMonth
+ResizingImageViewer: display Image allowing user to change magnification
+Shuffle:         shuffles int[], similar to Colllections.shuffle(List)
+StoppableThread: threads you can gently stop.
+StringTools:     miscellaneous string methods
+VersionCheck:    check what version of Java is running.
+
+BigDate is a replacement for Java Date class.
+Handles dates 999,999 BC to 999,999 AD, the
+missing year 0, the missing 10 days in 1582, and
+the switch to the 100/400 leap year rule in 1600.
+Heavily commented Java source included. Supports ISO
+WeekNumbers and ISO Day of week.  If you want do
+do calculations on pure dates, ignoring timezones
+and time, BigDate is much easier and faster than
+the Sun Date and Calendar classes.  See TestDate
+for sample uses.
+
+Version 1.1 adds a StringTools.condense method to collapse
+multiple spaces down to 1.
+
+version 1.2 just changes the pad directory structure.
+
+version 1.3 reformats the code with IntelliJ and adds Javadoc.
+
+version 1.4 adds fast toUpperCase and toLowerCase for chars and Strings.
+
+version 1.5 2007-10-02 adds Shuffle class.
+
+

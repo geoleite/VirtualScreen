@@ -1,0 +1,3 @@
+Enviar parte da imagem que sofreu auteracão
+
+Enviar apenas a coordenada do mouse

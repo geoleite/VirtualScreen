@@ -1,0 +1,173 @@
+/*
+ * CheckClient.java
+ *
+ * Created on 20 de Outubro de 2007, 09:13
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
+ */
+
+package br.com.easynet.virtualscreen;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.JList;
+
+/**
+ *
+ * @author famelix
+ */
+public class CheckClient extends Thread {
+    private String clients;
+    private JList jltMachine;
+    private int port;
+    private static boolean[] freePing = new boolean[255]; // Numero maximo de máquinas como cliente
+    static boolean[] sinal;
+    /** Creates a new instance of CheckClient */
+    public CheckClient() {
+    }
+    
+    private boolean contains(List machines, MachineDefinition md) {
+        for (int i=0; i < machines.size(); i++) {
+            MachineDefinition mdTemp = (MachineDefinition) machines.get(i);
+            if (md.equals(mdTemp)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void run() {
+        String[] clis = clients.split(",");
+        int numberMachineGroup = 4;
+        int totalMachine = clis.length;
+        
+        int qnt = (totalMachine / numberMachineGroup)  ;
+        if (totalMachine % numberMachineGroup != 0)
+            qnt++;
+        PingGroup[] pgs = null;
+        if (qnt == 0) {
+            pgs = new PingGroup[totalMachine];
+        } else {
+            pgs = new PingGroup[qnt];
+        }
+        
+        Machine[] machines = new Machine[totalMachine];
+        for (int i = 0; i < totalMachine; i++) {
+            Machine mac = new Machine(clis[i]);
+            machines[i] = mac;
+        }
+        /*
+        for (int i = 0; i < pgs.length; i++) {
+            int inicio = i* numberMachineGroup;
+            int fim = inicio + numberMachineGroup;
+            PingGroup pg = new PingGroup(machines, inicio, fim);
+            pgs[i] = pg;
+        }
+         */
+        List mds = new Vector();
+        
+        while (true) {
+            for (int i = 0; i < pgs.length; i++) {
+                int inicio = i* numberMachineGroup;
+                int fim = inicio + numberMachineGroup;
+                PingGroup pg = new PingGroup(machines, inicio, fim);
+                pgs[i] = pg;
+                
+                pgs[i].start();
+            }
+            
+            try {
+                Thread.currentThread().sleep(10000);
+            } catch (Exception e) {
+                
+            }
+            
+            
+            
+            
+            for (int i = 0; i < totalMachine; i++) {
+                try {
+                    Machine mac = machines[i];
+                    MachineDefinition md = new MachineDefinition(mac.getIp(), "on-line");
+                    //System.out.println("mds " + mds);
+                    System.out.println("md " + mac.getIp() + " " + mac.isOn());
+                    if (mac.isOn()) {
+                        // Procurandoa posicao para ser inserido na ordem
+                        /*int cont=0;
+                        for ( ; cont < lmm.getMachines().size(); cont++) {
+                            MachineDefinition mdTemp = (MachineDefinition) lmm.getMachines().get(cont);
+                            if (mac.getIp().compareTo(mdTemp.getIp()) < 0 ) {
+                                break;
+                            }
+                        }
+                        lmm.getMachines().add(cont, md);
+                         */
+                        if (!mds.contains(md)) {
+                            mds.add(md);
+                        } 
+                    } else if (mds.contains(md)){
+                        mds.remove(md);
+                    } 
+                } catch (Exception e){}
+            }
+            ListMachineModel lmm = new ListMachineModel();
+            lmm.setMachines(mds);
+            jltMachine.setModel(lmm);
+            try {
+                sleep(3000); // espera 5 segundos para pingar para as maquinas
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            } // espera 5 segundos para pingar para as maquinas
+            
+/*
+            try {
+                boolean liberado = false;
+                while (!liberado) {
+                    sleep(5000); // espera 5 segundos para pingar para as maquinas
+                    liberado = true;
+                    for (int i = 0; i < clis.length; i++) {
+                        if (freePing[i]) {
+                            liberado = false;
+                            //continue;
+                        }
+                    }
+                    //                  System.out.println("lmm " + lmm.getSize());
+                    //Adicionando a nova lista no List
+                    jltMachine.setModel(lmm);
+                }
+                //sleep(30000); // espera 30 segundos para pingar outra vez
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+ */
+        }
+    }
+    
+    public String getClients() {
+        return clients;
+    }
+    
+    public void setClients(String clients) {
+        this.clients = clients;
+    }
+    
+    public JList getJltMachine() {
+        return jltMachine;
+    }
+    
+    public void setJltMachine(JList jltMachine) {
+        this.jltMachine = jltMachine;
+    }
+    
+    public int getPort() {
+        return port;
+    }
+    
+    public void setPort(int port) {
+        this.port = port;
+    }
+}
